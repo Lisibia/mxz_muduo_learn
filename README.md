@@ -162,7 +162,7 @@ void EventLoop::loop(){
 
 ## 对象创建流程分析
 
-![用户请求建立分析](.\jpg\用户请求建立分析.png)
+![用户请求建立分析](./jpg/用户请求建立分析.png)
 
 以demo程序为例，展示从程序开始到结尾，用户请求的建立过程。
 
@@ -172,7 +172,7 @@ void EventLoop::loop(){
 
 
 
-![初始化线程数进行监听](.\jpg\初始化线程数进行监听.jpg)
+![初始化线程数进行监听](./jpg/初始化线程数进行监听.jpg)
 
 初始化分析：
 
@@ -180,7 +180,7 @@ void EventLoop::loop(){
 
 ## 事件循环分析
 
-![事件循环分析](.\jpg\事件循环分析.jpg)
+![事件循环分析](./jpg/事件循环分析.jpg)
 
 当`mainLoop`调用`loop()`，进入循环，在`mainLoop`中，`poller_`监听的就是在对象创建时，向`poller_`中的`acceptChannel`，就是监听socket，当有连接到来时，就会调用之前设置的读回调函数`TcpServer::newConnection`，将已经建立好的连接分发给`subloop`，后面的`io`操作都由`subloop`进行。
 
